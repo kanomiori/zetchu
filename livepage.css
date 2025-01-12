@@ -1,0 +1,537 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+}
+
+
+/* 背景画像の設定 */
+.background {
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .background {
+        display: block;
+        /*padding: 50px 0 0 0;*/
+    }
+}
+
+
+header {
+    display: flex;
+    background-color: #000;
+    height: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+}
+
+
+
+/*******ロゴ*******/
+
+#logo {
+    width: 30%;
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    #logo {
+        width: 50%;
+        height: auto;
+        -webkit-order: 1;
+        order: 1;
+        padding: 15px 0;
+    }
+}
+
+
+
+#logo>a {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+
+
+#logo>a>img {
+    width: 95%;
+    object-fit: contain;
+    height: 100%;
+}
+
+
+
+
+
+/*******ナビゲーション*******/
+
+#nav {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    #nav {
+        width: 100%;
+        -webkit-order: 3;
+        order: 3;
+        background-color: #222;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav a:not(:first-of-type) {
+        border-left: solid 1px #444;
+    }
+}
+
+#nav nav {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    height: 100%;
+    vertical-align: middle;
+    align-items: center;
+}
+
+
+
+#nav a {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+    #nav a {
+        font-size: 1rem;
+        padding: 5px 0;
+        box-sizing: border-box;
+    }
+}
+
+
+
+#nav a br {
+    display: none;
+}
+
+
+
+@media screen and (max-width:1280px) {
+
+    #nav a br {
+        display: block;
+    }
+
+}
+
+
+
+/*****snsアイコン******/
+
+
+
+#sns {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    #sns {
+        width: 50%;
+        -webkit-order: 2;
+        order: 2;
+    }
+}
+
+
+
+#sns a {
+    width: 15%;
+    max-width: 42px;
+}
+
+/* content */
+
+.content {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 834px) {
+    .content_catch {
+        margin: 20px;
+    }
+}
+
+
+/* キャッチ */
+
+.content_catch {
+    width: 10rem;
+    height: 200px;
+    font-size: 2.5rem;
+    position: relative;
+    border: solid 3px #13ed29;
+
+}
+
+.content_catch:before {
+    content: "LIVE INFO";
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+@media screen and (max-width: 834px) {
+    .content_catch {
+        width: 10rem;
+        height: 100px;
+        font-size: 2.5rem;
+        position: relative;
+        border: solid 3px #13ed29;
+    }
+}
+
+.animation_box {
+    padding: 10px;
+    animation: fadeIn 1s ease 0s 1 normal backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ライブリスト全体 */
+
+.live-list {
+    width: 100%;
+    max-width: 740px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0px 20px;
+}
+
+.date,
+.title,
+.location,
+.label {
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* ヘッダー行のデザイン */
+.live-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #555;
+}
+
+/* データ行のデザイン */
+.live-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 80px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    .title {
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .live-list {
+        width: 90%;
+        margin: auto;
+    }
+
+    .live-header {
+        display: none;
+    }
+
+    .live-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .date,
+    .title,
+    .location,
+    .label {
+        flex: none;
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+.live-item:last-child {
+    border-bottom: none;
+}
+
+.live-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.live-item span {
+    font-size: 0.7em;
+}
+
+@media screen and (max-width: 768px) {
+    .live-item span {
+        margin-left: 1em;
+        margin-right: 1rem;
+    }
+
+    .live-item br {
+        display: none;
+    }
+}
+
+/* 日付、タイトル、場所のスタイル */
+.date,
+.title,
+.location,
+.label {
+    flex: 1;
+    text-align: center;
+}
+
+/* ラベルの色分け */
+.label {
+    display: flex;
+    gap: 10px;
+    /* ラベル間のスペース */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 会場ラベルのスタイル */
+.label .venue {
+    background-color: #2b3a67;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 配信ラベルのスタイル */
+.label .streaming {
+    background-color: #ff616f;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 予約前ラベルのスタイル */
+.label .BeforeReserve {
+    background-color: #474747;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* モーダル */
+/* モーダル全体 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+    /* ふわっとしたアニメーション */
+}
+
+
+
+.modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    width: 80%;
+    max-width: 500px;
+    transform: scale(0.8);
+    animation: zoomIn 0.5s ease forwards;
+
+    /* ズームインアニメーション */
+    .modal-content p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+}
+
+
+.modal-content p {
+    white-space: pre-line;
+    /* 改行文字を反映 */
+    margin: 10px 0;
+    font-size: 16px;
+    margin-bottom: 8px;
+
+}
+
+h2#modal-title {
+    text-align: center;
+}
+
+
+
+/* 閉じるボタンの装飾 */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background: #444;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close:hover {
+    background-color: #555;
+}
+
+/* 予約ボタンのスタイル */
+.reserve-btn {
+    display: none;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2b3a67;
+    /* 緑色の背景 */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #202c4e;
+    /* ボタンをホバーした時の色 */
+}
+
+#reserve-btn-stream {
+    background-color: #ff616f;
+    /* 配信予約ボタンはオレンジ */
+}
+
+#reserve-btn-stream:hover {
+    background-color: #d5515c;
+}
+
+/* Coming Soon の場合のスタイル */
+.reserve-btn[disabled] {
+    background-color: #cccccc;
+    /* グレー背景 */
+    cursor: not-allowed;
+    /* クリックできないカーソル */
+    color: #666666;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+footer {
+
+    text-align: center;
+
+}
