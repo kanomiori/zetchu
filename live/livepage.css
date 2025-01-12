@@ -353,11 +353,6 @@ header {
     text-align: center;
 }
 
-/* 日付だけ色替え */
-.date {
-    color: #0EAE1E;
-}
-
 /* ラベルの色分け */
 .label {
     display: flex;

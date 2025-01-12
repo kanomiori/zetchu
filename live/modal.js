@@ -39,14 +39,14 @@ function showModal(title, date, location, time, turn, price, type, reserveVenueU
     // タイプが「会場」を含む場合、会場予約ボタンを表示
     if (type.includes("会場") && reserveVenueUrl) {
         reserveBtnVenue.href = reserveVenueUrl;
-        reserveBtnVenue.textContent = "会場参加予約";
+        reserveBtnVenue.textContent = "会場チケット予約";
         reserveBtnVenue.style.display = "block";
     }
 
     // タイプが「配信」を含む場合、配信予約ボタンを表示
     if (type.includes("配信") && reserveStreamUrl) {
         reserveBtnStream.href = reserveStreamUrl;
-        reserveBtnStream.textContent = "配信予約";
+        reserveBtnStream.textContent = "配信チケット予約";
         reserveBtnStream.style.display = "block";
     }
 
